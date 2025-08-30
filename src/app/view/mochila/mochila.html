@@ -1,0 +1,41 @@
+<div class="conteudo">
+  <div class="principal">
+    <div class="mochila"></div>
+    <div class="formlulario">
+      <form [formGroup]="form">
+        <div class="campos">
+          <p-floatlabel variant="on">
+            <input pInputText id="in_label" formControlName="descricao" autocomplete="off" />
+            <label for="in_label">Descricao</label>
+          </p-floatlabel>
+          <p-floatlabel variant="on">
+            <p-inputnumber formControlName="quantidade" />
+            <label for="in_label">Quantidade</label>
+          </p-floatlabel>
+
+          <p-button label="Adicionar" (click)="adicionar()" icon="pi pi-plus" iconPos="right" />
+        </div>
+      </form>
+    </div>
+
+    <ng-container *ngIf="itensList.length > 0">
+      <div class="listagem">
+        <h3>Itens na mochila</h3>
+        <ul>
+          @for (item of itensList; track $index) {
+          <li>
+            <span>{{ item.descricao }} - {{ item.quantidade }}</span>
+            <p-button
+              icon="pi pi-times"
+              [rounded]="true"
+              severity="danger"
+              (click)="remover(item)"
+              [outlined]="true"
+            />
+          </li>
+          }
+        </ul>
+      </div>
+    </ng-container>
+  </div>
+</div>

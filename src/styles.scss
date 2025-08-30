@@ -1,1 +1,8 @@
 /* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+@import "primeicons/primeicons.css";
+html{
+    background: radial-gradient(farthest-corner at right top, #000202, #1b3c6c);
+    height: 100%;
+    font-family: 'Roboto', cursive;
+}
