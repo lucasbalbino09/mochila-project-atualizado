@@ -17,25 +17,25 @@
         </div>
       </form>
     </div>
-
-    <ng-container *ngIf="itensList.length > 0">
-      <div class="listagem">
-        <h3>Itens na mochila</h3>
-        <ul>
-          @for (item of itensList; track $index) {
-          <li>
-            <span>{{ item.descricao }} - {{ item.quantidade }}</span>
-            <p-button
-              icon="pi pi-times"
-              [rounded]="true"
-              severity="danger"
-              (click)="remover(item)"
-              [outlined]="true"
-            />
-          </li>
-          }
-        </ul>
-      </div>
-    </ng-container>
   </div>
 </div>
+
+<ng-container *ngIf="itensList.length > 0">
+  <div class="listagem">
+    <h3>Itens na mochila</h3>
+    <ul>
+      @for (item of itensList; track $index) {
+      <li>
+        <span>{{ item.descricao }} - {{ item.quantidade }}</span>
+        <p-button
+          icon="pi pi-times"
+          [rounded]="true"
+          severity="danger"
+          (click)="remover(item)"
+          [outlined]="true"
+        />
+      </li>
+      }
+    </ul>
+  </div>
+</ng-container>
